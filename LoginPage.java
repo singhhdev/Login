@@ -84,7 +84,16 @@ public class LoginPage implements ActionListener{
 				String actor = loginIds.get(id);
 				//JOptionPane.showMessageDialog(JOptionPane.INFORMATION_MESSAGE, "Welcome "+ actor);
 				JOptionPane.showMessageDialog(frame, "Welcome "+ actor, "",JOptionPane.PLAIN_MESSAGE);
-				
+				frame.dispose();
+				if(actor.equals("Student")) {
+					StudentView student = new StudentView(actor);
+				}
+				if(actor.equals("Agent")) {
+					AgentView agent = new AgentView();
+				}
+				if(actor.equals("Chef")) {
+					ChefView student = new ChefView();
+				}
 			}else {
 				JOptionPane.showMessageDialog(frame, "ID Not found!", "", JOptionPane.ERROR);
 
@@ -94,3 +103,4 @@ public class LoginPage implements ActionListener{
 		
 	}
 }
+
